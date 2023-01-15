@@ -1,4 +1,4 @@
-# Problem-Solving
+# leetcode 풀이 모음
 
 
 ## Array
