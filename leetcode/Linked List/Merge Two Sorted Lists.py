@@ -12,13 +12,12 @@ class Solution:
         print("id check", id(cur), id(dummy))   # same id (mutable)
 
         while list1 and list2:
-            print(cur)
             if list1.val < list2.val:
-                cur.next = list1
+                cur.next = list1    # dummy also changes
                 list1, cur = list1.next, list1
 
             else:
-                cur.next = list2
+                cur.next = list2    # dummy also changes
                 list2, cur = list2.next, list2
 
 
