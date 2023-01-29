@@ -4,37 +4,30 @@ class Solution:
         
 
         def helper(visited, i, j, count):
-            if i > rows-1 or j > cols-1 or i < 0 or j <0:
-                return False 
-            
-            if count > len(word)-1:
-                return False
-             
-            if board[i][j] != word[count]:
-                return False
-            
-            if visited[i][j]:
+            if i < 0 or i > rows - 1 or j < 0 or j > cols - 1 or visited[i][j] or board[i][j] != word[count]:
                 return False 
 
             if count == len(word)-1:
                 return True 
 
-            visited[i][j] = True
-            count+=1 
 
-            d = helper(visited, i+1, j, count) 
-            u = helper(visited, i-1, j, count)
-            r = helper(visited, i, j+1, count) 
-            l = helper(visited, i, j-1, count)
+            visited[i][j] = True
+
+            d = helper(visited, i + 1, j, count + 1) 
+            u = helper(visited, i - 1, j, count + 1)
+            r = helper(visited, i, j + 1, count + 1) 
+            l = helper(visited, i, j - 1, count + 1)
 
             visited[i][j] = False
+
             return d or u or r or l
+
 
         visited = [[False] * cols for _ in range(rows)]
 
         for i in range(rows):
             for j in range(cols): 
-                if helper(visited,i,j, 0):
+                if helper(visited, i, j, 0):
                     return True
 
         return False   
