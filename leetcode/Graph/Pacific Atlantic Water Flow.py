@@ -2,6 +2,8 @@
 # set, dict - in: O(1) ***
 # set은 hashtable 기반 자료구조이기 때문에 list처럼 선형적으로 탐색하지 않음
 
+# O(m * n * 2 * (m + n)) = O(m * n * (m + n))
+
 
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
