@@ -1,4 +1,5 @@
 # O(m * n)
+# We visit every square once. --> using visited (grid[x][y] is '#' or not)
 
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
