@@ -1,5 +1,6 @@
 import heapq
 from collections import defaultdict
+# Dijkstra algorithm keeps the shortest distance array "dist"
 
 
 class Solution:
