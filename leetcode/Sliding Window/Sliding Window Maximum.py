@@ -11,7 +11,7 @@ class Solution:
                 q.pop()
             q.append(r)
 
-            # remove left val from window
+            # remove left val from window (out of bound)
             if l > q[0]:
                 q.popleft()
 
