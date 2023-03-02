@@ -3,6 +3,7 @@ class Solution:
         left, right = 0, len(nums) - 1
 
         while left < right:
+            # left <= right ---> got infinite loop
             mid = (left + right) // 2
 
             if nums[mid] > nums[right]:
