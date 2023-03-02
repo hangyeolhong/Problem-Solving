@@ -11,6 +11,8 @@ class Solution:
                 left = mid + 1
             else:
                 # search left side (left has the min)
+                # include index mid (right != mid - 1) because nums[mid] < nums[right]
+                # nums[mid] can be the minimum
                 right = mid
 
         return nums[left]
