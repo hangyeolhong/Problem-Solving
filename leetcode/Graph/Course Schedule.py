@@ -1,4 +1,4 @@
-# topological sort
+#1. topological sort O(V + E)
 
 from collections import deque
 
@@ -30,3 +30,40 @@ class Solution:
             cnt += 1
 
         return cnt == numCourses
+
+
+#2. dfs
+
+from collections import defaultdict
+
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        preMap = defaultdict(list)
+
+        for crs, pre in prerequisites:
+            preMap[pre].append(crs)
+
+        visited = set()
+
+        def dfs(cur_crs):
+            if cur_crs in visited:
+                return False
+            if preMap[cur_crs] == []:
+                # can finish all course
+                return True
+
+            visited.add(cur_crs)
+            for next_crs in preMap[cur_crs]:
+                if not dfs(next_crs):
+                    return False
+            visited.remove(cur_crs) # for search from other starting node
+
+            # trick for efficiency
+            preMap[cur_crs] = []    # do not double check route starting with cur_crs
+
+            return True
+
+        for c in range(numCourses):
+            if not dfs(c):
+                return False
+        return True
