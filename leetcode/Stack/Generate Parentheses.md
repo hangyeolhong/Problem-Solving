@@ -1,3 +1,4 @@
+```python
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         answer = []
@@ -15,3 +16,4 @@ class Solution:
         dfs(0, 0, "")
 
         return answer
+```
