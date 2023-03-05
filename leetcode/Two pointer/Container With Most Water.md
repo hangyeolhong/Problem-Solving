@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         i, j = 0, len(height) - 1
@@ -5,12 +7,13 @@ class Solution:
         
         while i < j:
             if height[i] <= height[j]:
-                # i 기준 면적 계산
+                # Calculate area based on i
                 answer = max(answer, height[i] * (j - i))
                 i += 1
             else:
-                # j 기준 면적 계산
+                # Calculate area based on j
                 answer = max(answer, height[j] * (j - i))
                 j -= 1   
                         
         return answer
+```
