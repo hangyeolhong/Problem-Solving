@@ -1,3 +1,5 @@
+### Python solution
+```python
 # Union-Find
 
 class Solution:
@@ -24,4 +26,4 @@ class Solution:
         for a, b in edges:
             if not union(a, b):
                 return [a, b]
-            
+```
