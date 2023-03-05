@@ -1,3 +1,5 @@
+### Python solution
+```python
 #1. dp O(n^2) (3sec)
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
@@ -11,7 +13,7 @@ class Solution:
         return max(dp)
 
       
-#2. binary search
+#2. binary search (84ms)
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         answer = []
@@ -40,3 +42,4 @@ class Solution:
                 answer[idx + 1] = nums[i]
         
         return len(answer)
+```
