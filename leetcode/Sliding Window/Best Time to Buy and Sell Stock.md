@@ -1,14 +1,14 @@
+### Python solution
+
+```python
+
+#1. two pointer
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        """
-          two-pointer
-        """
-        
         mx_profit = 0
         left, right = 0, 1
 
         while right < len(prices):
-        
             if prices[left] >= prices[right]:
                 # cannot sell
                 left = right
@@ -21,7 +21,7 @@ class Solution:
 
         return mx_profit
    
-"""
+#2. sliding window
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         res = 0
@@ -33,4 +33,4 @@ class Solution:
             res = max(res, price - lowest)
         return res
 
-"""
+```
