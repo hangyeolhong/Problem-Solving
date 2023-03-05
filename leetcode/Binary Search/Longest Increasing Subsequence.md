@@ -18,7 +18,7 @@ class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         answer = []
 
-        # return the first index where n can be inserted in lst (* strictly increasing)
+        # return the first index where nums[ret] less than n is located (* strictly increasing)
         def getIdx(lst, n):
             left, right = 0, len(lst) - 1
             ret = -1
