@@ -7,11 +7,11 @@ class Solution:
         
         while i < j:
             if height[i] <= height[j]:
-                # Calculate area based on i
+                # calculate area based on i
                 answer = max(answer, height[i] * (j - i))
                 i += 1
             else:
-                # Calculate area based on j
+                # calculate area based on j
                 answer = max(answer, height[j] * (j - i))
                 j -= 1   
                         
