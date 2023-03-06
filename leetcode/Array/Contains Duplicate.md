@@ -1,3 +1,5 @@
+### Python solution
+```python
 # Hashset
 # Time complexity: O(n)
 # Space complexity: O(n)
@@ -13,3 +15,4 @@ class Solution:
                 return True
 
         return False
+```
