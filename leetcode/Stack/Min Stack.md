@@ -1,8 +1,9 @@
+### Python solution
+```python
 class MinStack:
 
     def __init__(self):
         self.st = []
-
 
     def push(self, val: int) -> None:
         if not self.st:
@@ -14,7 +15,6 @@ class MinStack:
             else:
                 self.st.append((val, mn))
 
-
     def pop(self) -> None:
         self.st.pop()
         
@@ -24,4 +24,4 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.st[-1][1]
-        
+```
