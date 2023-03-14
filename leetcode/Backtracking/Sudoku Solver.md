@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def solveSudoku(self, board: List[List[str]]) -> None:
         """
@@ -47,3 +49,4 @@ class Solution:
 
         dfs(0)
         print(board)
+```
