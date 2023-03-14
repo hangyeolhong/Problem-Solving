@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         d1, d2 = dict(), dict()
@@ -9,3 +11,4 @@ class Solution:
             d2[w] = v
         
         return True
+```
