@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         cnt = dict()
@@ -17,3 +19,4 @@ class Solution:
             res = max(res, r - l + 1)
 
         return res
+```
