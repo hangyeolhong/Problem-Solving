@@ -10,7 +10,7 @@ class Solution:
         
         def dfs(s, idx):
             if len(s) == len(digits):
-                answer.append(copy.deepcopy(s))
+                answer.append(s)
                 return 
             
             for i in range(idx, len(digits)):
