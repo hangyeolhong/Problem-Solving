@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         answer = []
@@ -20,3 +22,4 @@ class Solution:
         dfs(0)
 
         return answer
+```
