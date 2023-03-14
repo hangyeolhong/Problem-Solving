@@ -1,3 +1,5 @@
+### Python solution
+```python
 # Sol1 - connecting all the k linked lists into one list, and sort the list.
 # this is simple but it does not take the advantage of the fact that each linked list is already sorted.
 
@@ -37,3 +39,4 @@ class Solution:
                 heappush(heap, (n.next.val, i))
                 lists[i] = n.next
         return res.next
+```
