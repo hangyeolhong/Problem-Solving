@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         charSet = set()
@@ -12,3 +14,4 @@ class Solution:
             res = max(res, r - l + 1)
 
         return res
+```
