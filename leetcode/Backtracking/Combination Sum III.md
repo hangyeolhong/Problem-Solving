@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
         self.answer = []
@@ -17,3 +19,4 @@ class Solution:
         for i in range(idx, 10):
             if sum(res) + i <= n:
                 self.dfs(i + 1, res + [i], k, n)
+```
