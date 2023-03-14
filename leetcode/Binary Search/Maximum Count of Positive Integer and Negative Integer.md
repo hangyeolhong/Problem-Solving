@@ -1,3 +1,5 @@
+### Python solution
+```python
 from bisect import bisect_left, bisect_right
 
 class Solution:
@@ -45,3 +47,4 @@ class Solution:
         pos = len(nums) - find_last(nums, left, right) - 1
         
         return max(pos, neg)
+```
