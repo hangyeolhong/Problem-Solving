@@ -1,3 +1,5 @@
+### Python solution
+```python
 """
 # TLE
 from itertools import permutations
@@ -51,3 +53,4 @@ class Solution:
             l += 1
 
         return matches == 26
+```
