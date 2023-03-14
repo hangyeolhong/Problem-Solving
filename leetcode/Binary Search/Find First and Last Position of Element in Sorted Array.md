@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
 
@@ -35,3 +37,4 @@ class Solution:
             return -1
 
         return [find_first(nums, target), find_last(nums, target)]
+```
