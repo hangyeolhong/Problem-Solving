@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         output = []
@@ -54,3 +56,4 @@ class Solution:
 
         return res
 """
+```
