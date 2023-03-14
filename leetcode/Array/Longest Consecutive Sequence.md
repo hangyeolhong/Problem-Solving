@@ -1,3 +1,5 @@
+### Python solution
+```python
 # 331ms
 # O(n), O(n)
 
@@ -64,3 +66,4 @@ class Solution:
         # return max([len(l) for l in d.values()]) 
         
 """
+```
