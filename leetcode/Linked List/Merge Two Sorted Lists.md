@@ -1,3 +1,5 @@
+### Python solution
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -26,3 +28,4 @@ class Solution:
             cur.next = list1 if list1 else list2
 
         return dummy.next
+```
