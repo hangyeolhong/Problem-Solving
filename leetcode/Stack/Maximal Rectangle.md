@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def maximalRectangle(self, matrix: List[List[str]]) -> int:
         if not matrix or not matrix[0]:
@@ -19,3 +21,4 @@ class Solution:
                 stack.append(i)
                 
         return ans
+```
