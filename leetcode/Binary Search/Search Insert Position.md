@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         # binary search: sorted array
@@ -20,3 +22,4 @@ class Solution:
                 right = mid - 1
         
         return answer
+```
