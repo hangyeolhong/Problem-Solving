@@ -1,3 +1,5 @@
+### Python solution
+```python
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         """
@@ -18,3 +20,4 @@ class Solution:
         suffix.reverse()
 
         return [pref[i] * suffix[i] for i in range(len(nums))]
+```
