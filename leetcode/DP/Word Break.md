@@ -2,7 +2,7 @@
 ```python
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        dp = [False] * (len(s) + 1)
+        dp = [False] * (len(s) + 1) # dp[i] means... s[0:i + 1] is decomposed into words belonging to wordDict
         dp[0] = True
 
         for i in range(len(s)):
