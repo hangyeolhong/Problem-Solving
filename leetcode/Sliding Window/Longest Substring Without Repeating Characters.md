@@ -7,6 +7,7 @@ class Solution:
         res = 0
 
         for r in range(len(s)):
+            # if we see same char twice within curr window, shift start position
             while s[r] in charSet:
                 charSet.remove(s[l])
                 l += 1
