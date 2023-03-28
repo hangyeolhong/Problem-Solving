@@ -44,3 +44,6 @@ class Solution:
 
         return 0
 ```
+
+### Similar idea
+[Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
