@@ -12,8 +12,8 @@ class Solution:
 ```
 
 ### Explanation
-- n - 1 means decrease 1 of the lower digit.
+- ```n - 1``` means decrease 1 of the lower digit.
   - ex) 1011 becomes 1010.
-- n &= means update n.
+- ```n &=``` means update n.
   - Because of AND op, 1 of the higher side of n is maintained, and the part where 1 is missing changes.
   - ex) 1011 & 1010 = 1010
