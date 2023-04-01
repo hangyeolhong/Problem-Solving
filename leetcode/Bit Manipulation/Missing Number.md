@@ -23,3 +23,4 @@ class Solution:
 
 ### Explanation
 - Key: Order doesn't matter
+- XOR between same number results in **0**.
