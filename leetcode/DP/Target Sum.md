@@ -4,19 +4,29 @@ class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         dp = {}
 
-        def dfs(idx, total):
+        def dfs(cur, idx):
+            if (cur, idx) in dp:
+                return dp[(cur, idx)]
+
+            # termination condition
             if idx == len(nums):
-                return 1 if total == target else 0
+                if cur == target:
+                    # possible way
+                    return 1
+                else:
+                    # impossible way
+                    return 0
 
-            if (idx, total) in dp:
-                return dp[(idx, total)]
+            dp[(cur, idx)] = dfs(cur + nums[idx], idx + 1) + dfs(cur - nums[idx], idx + 1)
 
-            dp[(idx, total)] = dfs(idx + 1, total + nums[idx]) + dfs(idx + 1, total - nums[idx])
+            return dp[(cur, idx)]
 
-            return dp[(idx, total)]
-
-        return dfs(0, 0)
+        answer = dfs(0, 0)
+        return answer
 ```
+
+### Explanation
+- ```dp[cur]``` doesn't work. Key must be ```(cur, idx)```.
 
 ### 비슷한 문제 (dfs + dp)
 [백준 1520: 내리막길](https://www.acmicpc.net/problem/1520)
