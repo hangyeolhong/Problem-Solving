@@ -1,6 +1,37 @@
 ### Python solution
 ```python
 # caching + dfs
+
+#1. dict
+class Solution:
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+        m, n = len(matrix), len(matrix[0])
+        d = {}
+
+        def dfs(x, y, prev):
+            if x < 0 or x >= m or y < 0 or y >=n or matrix[x][y] <= prev:
+                return 0
+
+            if (x, y) in d:
+                return d[(x, y)]
+
+            up = dfs(x - 1, y, matrix[x][y])
+            down = dfs(x + 1, y, matrix[x][y])
+            left = dfs(x, y - 1, matrix[x][y])
+            right = dfs(x, y + 1, matrix[x][y])
+
+            d[(x, y)] = 1 + max(up, down, left, right)
+            return d[(x, y)]
+
+        answer = 0
+        for i in range(m):
+            for j in range(n):
+                res = dfs(i, j, -1)
+                answer = max(answer, res)
+
+        return answer
+        
+#2. 2d-list
 class Solution:
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
         M, N = len(matrix), len(matrix[0])
@@ -25,31 +56,7 @@ class Solution:
                 res.append(dfs(i, j))
 
         return max(res)
-"""
-class Solution:
-    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
-        M, N = len(matrix), len(matrix[0])
-        dp = {}
-
-        def dfs(x, y, val):
-            if x < 0 or x >= M or y < 0 or y >= N or matrix[x][y] <= val:
-                return 0
-
-            if (x, y) in dp:
-                return dp[(x, y)]
-            
-            res = 1
-            res = max(res, 1 + dfs(x + 1, y, matrix[x][y]))
-            res = max(res, 1 + dfs(x - 1, y, matrix[x][y]))
-            res = max(res, 1 + dfs(x, y + 1, matrix[x][y]))
-            res = max(res, 1 + dfs(x, y - 1, matrix[x][y]))
-            dp[(x, y)] = res
-            return res
-
-        for i in range(M):
-            for j in range(N):
-                dfs(i, j, -1)
-
-        return max(dp.values())
-"""
 ```
+
+### Explanation
+- Dfs + dp
