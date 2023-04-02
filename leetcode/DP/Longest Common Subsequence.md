@@ -11,5 +11,9 @@ class Solution:
                 else:
                     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 
-        return max(map(max, dp))
+        return dp[-1][-1]   # just return last element, don't have to return max(map(max, dp))
 ```
+
+### Explanation
+- **Sequence**
+    - Therefore, if character is different, not ```dp[i][j] == 0```, just ```dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])``` to set the longest common sequence.
