@@ -1,30 +1,26 @@
 ### Python solution
 ```python
-# 331ms
+#1. Hash: 331ms
 # O(n), O(n)
 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        nums = set(nums)
-        res = 0
+        total = set(nums)
+        answer = 0
 
         for num in nums:
-            if num - 1 in nums:
-                # if not the first element of sequence
-                continue
+            if num - 1 not in total:
+                # first element
+                res = 1
+                while num + 1 in total:
+                    num += 1
+                    res += 1
                 
-            tmp_length = 1
+                answer = max(answer, res)
 
-            while num + tmp_length in nums:
-                tmp_length += 1
-
-            res = max(res, tmp_length)
-        return res
-
-
-      
-      
-""" union-find: 621ms
+        return answer
+            
+#2. Union-Find: 621ms
 from collections import defaultdict
 
 class Solution:
@@ -64,6 +60,10 @@ class Solution:
         res = sorted(d.values(), key=lambda x: -len(x))
         return len(res[0])
         # return max([len(l) for l in d.values()]) 
-        
-"""
 ```
+
+### Explanation
+- Hash: ```set()```
+    - We can search value O(1)
+    - Check whether ```num``` is the first element of consecutive sequence by ```if num - 1 not in total```
+    - Increase sequence length by checking whether next value is in set (```while num + 1 in total```)
