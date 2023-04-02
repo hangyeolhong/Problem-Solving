@@ -29,5 +29,5 @@ class Solution:
 ### Explanation
 - after buy, we have to sell.
     - $\therefore$ ```buy = dfs(i + 1, False) - prices[i]```
-- after sell, we have to buy buy. 
+- after sell, we have to buy. 
     - $\therefore$ ```sell = dfs(i + 2, True) + prices[i]```
