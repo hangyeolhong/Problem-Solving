@@ -57,3 +57,6 @@ class Solution:
         return res
 """
 ```
+
+### 유사한 문제
+프로그래머스: 징검다리 건너기[https://school.programmers.co.kr/learn/courses/30/lessons/64062]
