@@ -1,5 +1,6 @@
 ### Python solution
 ```python
+#1.
 class MinStack:
 
     def __init__(self):
@@ -24,4 +25,33 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.st[-1][1]
+        
+#2. 
+class MinStack:
+
+    def __init__(self):
+        self.st = []
+        self.min_st = []    # record the minimum value before the current index
+
+    def push(self, val: int) -> None:
+        self.st.append(val)
+        if not self.min_st:
+            self.min_st.append(val)
+
+        else:
+            if val < self.min_st[-1]:
+                self.min_st.append(val)
+            else:
+                self.min_st.append(self.min_st[-1])
+        
+    def pop(self) -> None:
+        self.st.pop()
+        self.min_st.pop()
+
+    def top(self) -> int:
+        return self.st[-1]
+
+    def getMin(self) -> int:
+        return self.min_st[-1]
+
 ```
