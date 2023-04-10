@@ -1,5 +1,6 @@
 ### Python solution
 ```python
+#1.
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         answer = []
@@ -21,5 +22,27 @@ class Solution:
             dfs(idx + 1)
 
         dfs(0)
+        return answer
+        
+#2.
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        answer = []
+        nums.sort()
+
+        def dfs(res, idx):
+            if idx > len(nums):
+                return
+
+            answer.append(res[:])
+            
+            prev = -11
+            for i in range(idx, len(nums)):
+                if prev != nums[i]:
+                    dfs(res + [nums[i]], i + 1)
+
+                prev = nums[i]
+
+        dfs([], 0)
         return answer
 ```
