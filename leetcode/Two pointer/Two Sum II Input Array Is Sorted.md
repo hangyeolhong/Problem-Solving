@@ -7,7 +7,7 @@ class Solution:
         while left < right:
             s = numbers[left] + numbers[right]
             if s == target:
-                return [left + 1, right + 1]
+                return [left + 1, right + 1]    # not zero-indexed
             
             if s < target:
                 left += 1   # s gets bigger
