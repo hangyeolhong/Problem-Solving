@@ -1,3 +1,5 @@
+### Python solution
+```python
 # Time complexity: O(rows * cols * 4 ^(len(word)) )
 
 class Solution:
@@ -11,7 +13,6 @@ class Solution:
 
             if count == len(word)-1:
                 return True 
-
 
             visited[i][j] = True
 
@@ -33,3 +34,4 @@ class Solution:
                     return True
 
         return False   
+```
