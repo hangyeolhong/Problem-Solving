@@ -1,5 +1,6 @@
 ### Python solution
 ```python
+#1.
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         self.answer = []
@@ -27,32 +28,30 @@ class Solution:
             if sum(res) + self.candidates[i] <= target:
                 self.dfs(res + [self.candidates[i]], i + 1, target)
 
-
-
+#2.
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         candidates.sort()
+        answer = []
 
-        res = []
-
-        def backtrack(cur, pos, target):
-            if target == 0:
-                res.append(cur.copy())
+        def dfs(res, idx):
+            
+            if sum(res) == target:
+                answer.append(res[:])
                 return
-            if target <= 0:
+
+            if idx >= len(candidates):
                 return
 
             prev = -1
-            for i in range(pos, len(candidates)):
-                if candidates[i] == prev:
-                    continue
-                cur.append(candidates[i])
-                backtrack(cur, i + 1, target - candidates[i])
-                cur.pop()
+            for i in range(idx, len(candidates)):
+                if prev != candidates[i] and sum(res) + candidates[i] <= target:
+                    dfs(res + [candidates[i]], i + 1)
+
                 prev = candidates[i]
 
-        backtrack([], 0, target)
-        return res
+        dfs([], 0)
+        return answer
 ```
 
 ### Drawing explanation
