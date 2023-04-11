@@ -26,3 +26,7 @@ class Solution:
 
         return -1
 ```
+
+### Explanation
+- 1. check left/right sorted
+- 2. check position of target
