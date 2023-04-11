@@ -1,3 +1,5 @@
+### Python solution
+```python
 # Bellman-Ford O(E*k)
 
 class Solution:
@@ -17,3 +19,20 @@ class Solution:
             prices = tmpPrices
             
         return -1 if prices[dst] == INF else prices[dst]
+```
+
+### Explanation
+- original bellman-ford
+- WHY ```tmpPrices = prices.copy()```? because we have to visit only **k** stops
+```python
+def bellman-ford(start):
+    dist = [INF] * (V + 1)
+    dist[start] = 0
+    for i in range(V):
+        for s, d, w in edges:
+            if dist[s] != INF and dist[d] > dist[s] + w:
+                if i == V - 1:
+                    return -1
+                dist[d] = dist[s] + w
+    return dist    
+```
