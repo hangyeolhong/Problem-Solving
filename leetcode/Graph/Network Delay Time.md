@@ -1,3 +1,6 @@
+### Python solution
+```python
+
 import heapq
 from collections import defaultdict
 # Dijkstra algorithm keeps the shortest distance array "dist"
@@ -31,3 +34,4 @@ class Solution:
                     heapq.heappush(q, [dist[neighbor], neighbor])
 
         return -1 if INF in dist else max(dist)
+```
