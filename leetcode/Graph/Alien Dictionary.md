@@ -65,7 +65,9 @@ class Solution:
         def dfs(char):
             if char in visited:
                 # already visited
-                return False
+                # True: duplicated
+                # False: normally completed
+                return visited[char]
 
             visited[char] = True
 
