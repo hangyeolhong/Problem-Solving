@@ -64,7 +64,8 @@ class Solution:
 
         def dfs(char):
             if char in visited:
-                return visited[char]
+                # already visited
+                return False
 
             visited[char] = True
 
