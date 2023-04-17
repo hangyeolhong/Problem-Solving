@@ -24,3 +24,8 @@ class DetectSquares:
         return answer
 
 ```
+
+### Explanation
+- Use hashmap for distinct point (x, y)
+- count operation: To become a rectangle, there must be coordinates on the diagonal and coordinates that trade the values of x and y.
+    - ```answer += self.d[(x, py)] * self.d[(px, y)]```
