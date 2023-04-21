@@ -40,3 +40,12 @@ class MedianFinder:
 - Use 2 heap: min, max heap
   - Size of min, max heap is approximately same.
 - Pop an element in the heap is O(1)
+
+### Follow-up
+- If all integer numbers from the stream are in the range [0, 100], how would you optimize your solution?
+  - Use Counter dictionary and iterate over the array to find the middle value to get our median ( O(100))
+- If 99% of all integer numbers from the stream are between 0 and 100, how would you optimize it?
+  - Just keep a count of how many numbers are above 100 and how many numbers are below 0, since these numbers could never get to be the median and are therefore not important to keep  (O(100))
+- 
+
+
