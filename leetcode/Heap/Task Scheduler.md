@@ -23,3 +23,8 @@ class Solution:
                 
         return time
 ```
+
+### Explanation
+- **Two data structures** are needed
+  - 1. **Maxheap** for finding the most frequent tasks
+  - 2. **Queue** for recording the number of tasks remaining and cool down time  & popping the task that went in first
