@@ -31,4 +31,4 @@ class Solution:
 ```
 
 ### Drawing Explanation
-<img src="https://user-images.githubusercontent.com/59331040/233763700-77242eb5-b09d-4202-b073-66ad6c8005de.JPG" width="30%">
+<img src="https://user-images.githubusercontent.com/59331040/233763700-77242eb5-b09d-4202-b073-66ad6c8005de.JPG" width="50%">
