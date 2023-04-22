@@ -16,3 +16,10 @@ class Solution:
             curr = temp
         return prev
 ```
+
+### Explanation
+- Original: 1 -> 2 -> 3 -> None
+1. None <- 1 -> 2 -> 3 -> None
+2. None <- 1 <- 2 -> 3 -> None
+3. None <- 1 <- 2 <- 3 -> None
+4. return prev
